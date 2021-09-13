@@ -1,0 +1,8 @@
+<button
+  class="btn btn-primary"
+  (click)="inciarTimer()"
+  *ngIf="muestraBtnIniciar"
+>
+  Iniciar
+</button>
+<countdown *ngIf="muestraTabla" [config]="{ leftTime: 30 }" class="btn btn-primary text-white"></countdown>
