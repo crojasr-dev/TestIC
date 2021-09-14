@@ -5,13 +5,51 @@ import { Component } from '@angular/core';
   templateUrl: './tabla.component.html',
 })
 export class TablaComponent {
+  puntajeMalas: number = 0;
+  pautaCorrectas = [
+    true, false, true,
+    false,true,false,
+    true,false,false,
+    false,false,false,
+    false,false,true,
+    true,false,false,
+    false,false,true,
+    false,false,false,
+    false,false,false,
+    true,false,false,
+    false,false,true,
+    false,false,false,
+    false,true,false,
+    false,false,false,
+    false,false,true,
+    false,false,false,
+    false,false,false,
+    false,false,false,
+    true,false,true,
+    true,true,false,
+    false,false,true,
+    false,false,true,
+    true,false,false,
+    false,false,false,
+    true,true,false
+  
+  
+  ];
 
   ObtieneRespuesta = (evento: any) => {
     console.clear();
-    for (let index = 0; index < evento.target.length-1; index++) {
-      const element :boolean = evento.target[index].checked;
-      console.log('Elemento: ' + index + ': ' + element);
-    }
-  };
+    this.puntajeMalas = 20;
 
+    
+    debugger;
+    for (let i = 0; i < 3; i++) {
+      if (evento.target[i].checked === this.pautaCorrectas[i]) {
+        this.puntajeMalas-=1;
+      }else if(evento.target[i].checked !== this.pautaCorrectas[i]){
+        this.puntajeMalas+=1;
+      }
+    } 
+
+    console.log('las malas son: ', this.puntajeMalas);
+  };
 }
