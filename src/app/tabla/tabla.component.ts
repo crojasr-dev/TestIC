@@ -6,50 +6,112 @@ import { Component } from '@angular/core';
 })
 export class TablaComponent {
   puntajeMalas: number = 0;
-  pautaCorrectas = [
-    true, false, true,
-    false,true,false,
-    true,false,false,
-    false,false,false,
-    false,false,true,
-    true,false,false,
-    false,false,true,
-    false,false,false,
-    false,false,false,
-    true,false,false,
-    false,false,true,
-    false,false,false,
-    false,true,false,
-    false,false,false,
-    false,false,true,
-    false,false,false,
-    false,false,false,
-    false,false,false,
-    true,false,true,
-    true,true,false,
-    false,false,true,
-    false,false,true,
-    true,false,false,
-    false,false,false,
-    true,true,false
-  
-  
+  puntajeBuenas: number = 0;
+  pautaCorrectas: boolean[] = [
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
   ];
 
   ObtieneRespuesta = (evento: any) => {
     console.clear();
-    this.puntajeMalas = 20;
+    this.puntajeMalas = 0;
+    this.puntajeBuenas = 0;
 
-    
-    debugger;
-    for (let i = 0; i < 3; i++) {
+    // debugger;
+    for (let i = 0; i < evento.target.length - 1; i++) {
       if (evento.target[i].checked === this.pautaCorrectas[i]) {
-        this.puntajeMalas-=1;
-      }else if(evento.target[i].checked !== this.pautaCorrectas[i]){
-        this.puntajeMalas+=1;
+        this.puntajeBuenas += 1;
+        console.log('hizo la resta');
+      } else {
+        this.puntajeMalas += 1;
+        console.log('se hizo la suma');
       }
-    } 
+      console.log(
+        'Indice: ',
+        i,
+        '  -  ',
+        evento.target[i].checked,
+        'PAuta: ',
+        this.pautaCorrectas[i],
+        '|  La suma de malas es: ',
+        this.puntajeMalas
+      );
+    }
 
-    console.log('las malas son: ', this.puntajeMalas);
+    // console.log('las malas son: ', this.puntajeMalas);
+    alert('las malas son: ' + this.puntajeMalas+'\n'+'Las buenas son: '+this.puntajeBuenas);
   };
 }
