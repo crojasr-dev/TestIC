@@ -7,7 +7,7 @@ import { TablaComponent } from './tabla/tabla.component';
 import { TimerComponent } from './timer/timer.component';
 import { CountdownModule } from 'ngx-countdown';
 import { FormsModule } from '@angular/forms';
-
+import { ServicioService } from './services/servicio.service';
 
 @NgModule({
   declarations: [
@@ -17,10 +17,8 @@ import { FormsModule } from '@angular/forms';
     TablaComponent,
     TimerComponent,
   ],
-  imports: [
-    BrowserModule, CountdownModule,FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, CountdownModule, FormsModule],
+  providers: [ServicioService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

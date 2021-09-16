@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicioService } from '../services/servicio.service';
 
 @Component({
   selector: 'app-timer',
@@ -17,4 +18,6 @@ export class TimerComponent {
 
     }, 5000);
   }
+
+
 }
