@@ -7,5 +7,5 @@ import { ServicioService } from './services/servicio.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private asdf: ServicioService) {}
+
 }

@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 import { TablaComponent } from './tabla/tabla.component';
-import { TimerComponent } from './timer/timer.component';
 import { CountdownModule } from 'ngx-countdown';
 import { FormsModule } from '@angular/forms';
 import { ServicioService } from './services/servicio.service';
@@ -15,7 +14,6 @@ import { ServicioService } from './services/servicio.service';
     HeaderComponent,
     InstruccionesComponent,
     TablaComponent,
-    TimerComponent,
   ],
   imports: [BrowserModule, CountdownModule, FormsModule],
   providers: [ServicioService],

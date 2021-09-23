@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 export class TablaComponent {
   puntajeMalas: number = 0;
   puntajeBuenas: number = 0;
+  muestraTimer: boolean = false;
+  muestraBtnIniciar: boolean = true;
+  habilitaRespuestas:boolean=true;
+  muestraTabla:boolean=false;
+
   pautaCorrectas: boolean[] = [
     true,
     false,
@@ -85,6 +90,22 @@ export class TablaComponent {
     false,
   ];
 
+  inciarTimer() {
+
+    this.muestraTabla=true;
+
+
+    this.muestraTimer = true;
+    this.muestraBtnIniciar = false;
+    this.habilitaRespuestas=false;
+
+    setTimeout(() => {
+    this.habilitaRespuestas=true;
+    console.log('finalizó el timerrrrr...');
+    
+    }, 5000);
+  }
+
   ObtieneRespuesta = (evento: any) => {
     console.clear();
     this.puntajeMalas = 0;
@@ -112,6 +133,12 @@ export class TablaComponent {
     }
 
     // console.log('las malas son: ', this.puntajeMalas);
-    alert('las malas son: ' + this.puntajeMalas+'\n'+'Las buenas son: '+this.puntajeBuenas);
+    alert(
+      'las malas son: ' +
+        this.puntajeMalas +
+        '\n' +
+        'Las buenas son: ' +
+        this.puntajeBuenas
+    );
   };
 }
