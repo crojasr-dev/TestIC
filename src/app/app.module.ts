@@ -6,7 +6,7 @@ import { InstruccionesComponent } from './instrucciones/instrucciones.component'
 import { TablaComponent } from './tabla/tabla.component';
 import { CountdownModule } from 'ngx-countdown';
 import { FormsModule } from '@angular/forms';
-import { ServicioService } from './services/servicio.service';
+import { EjemploComponent } from './ejemplo/ejemplo.component';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,10 @@ import { ServicioService } from './services/servicio.service';
     HeaderComponent,
     InstruccionesComponent,
     TablaComponent,
+    EjemploComponent,
   ],
-  imports: [BrowserModule, CountdownModule, FormsModule],
-  providers: [ServicioService],
+  imports: [ BrowserModule, CountdownModule, FormsModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

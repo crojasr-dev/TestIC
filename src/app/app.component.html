@@ -1,3 +1,10 @@
 <app-header></app-header>
-<app-instrucciones *ngIf="false"></app-instrucciones>
-<app-tabla></app-tabla>
+<app-ejemplo *ngIf="!comenzar"></app-ejemplo>
+
+
+<button (click)="comenzarTest()"
+        *ngIf="!comenzar"        
+>Comenzar</button>
+<app-instrucciones *ngIf="comenzar"></app-instrucciones>
+<app-tabla *ngIf="comenzar" ></app-tabla>
+

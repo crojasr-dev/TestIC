@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ServicioService } from './services/servicio.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,12 @@ import { ServicioService } from './services/servicio.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+  comenzar:boolean=false;
+
+
+  comenzarTest=()=>{
+    this.comenzar=true;
+  }
 
 }

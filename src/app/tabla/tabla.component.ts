@@ -12,6 +12,8 @@ export class TablaComponent {
   habilitaRespuestas:boolean=true;
   muestraTabla:boolean=false;
 
+  muestra:boolean=false;
+
   pautaCorrectas: boolean[] = [
     true,
     false,
